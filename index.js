@@ -52,5 +52,9 @@ inquirer.prompt(questions).then(response => {
         const rect= new Square(response.shape, response.text, response.textColor, response.shapeColor)
         fs.writeFileSync("logo.svg", rect.render())
     }
+    if (response.shape === "polygon") {
+        const rect = new Triangle(response.shape, response.text, response.textColor, response.shapeColor)
+        fs.writeFileSync("logo.svg", polygon.render())
+    }
 
 })
